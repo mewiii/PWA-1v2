@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!--
+
+     Author:    Deanna M. Wilborne
+    Created:    2021-02-13
+    Purpose:    Provide Application About information
+    History:
+                2019-03-19, DMW, upgraded to bootstrap v5 beta 2
+
+                CC-BY-SA-NV 4.0 license 2021, Deanna M. Wilborne, all rights reserved.
+                https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title id="appTitle"></title> <!-- set this in your body onload() method call -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--
+        <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="Content/Site.css" rel="stylesheet" />
+
+        <!-- <script src="Scripts/jquery-3.4.1.intellisense.js"></script> --> <!-- 2021-02-13, DMW, used by editors, not needed for the application -->
+        <script src="Scripts/jquery-3.7.1.min.js"></script> <!-- 2023-10-13, DMW, updated to use jQuery v3.7.1 -->
+        <!-- <script src="Scripts/jquery-3.5.1.min.js"></script> -->
+        <!-- <script src="Scripts/jquery-3.4.1.min.js"></script> -->
+        <!-- <script src="Scripts/jquery-3.4.1.slim.min.js"></script> -->
+        <script src="Scripts/WebForms/WebForms.js"></script>
+        <script src="Scripts/WebForms/WebUIValidation.js"></script>
+        <script src="Scripts/WebForms/MenuStandards.js"></script>
+        <script src="Scripts/WebForms/GridView.js"></script>
+        <script src="Scripts/WebForms/DetailsView.js"></script>
+        <!-- <script src="Scripts/WebForms/SmartNav.js"></script> --> <!-- 2021-02-13, DMW, has an error at line 259 for non IE browsers, don't seem to need it-->
+        <script src="Scripts/WebForms/TreeView.js"></script>
+        <script src="Scripts/WebForms/WebParts.js"></script>
+        <script src="Scripts/WebForms/Focus.js"></script>
+        <!--
+        <script src="Scripts/bootstrap.min.js"></script>
+        -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/modernizr-2.8.3.js"></script>
+        <script src="Scripts/Site-Navigation.js"></script>
+        <script src="Scripts/Site.js"></script>
+
+    </head>
+
+    <body onload="onload('About');"> <!-- onload is defined in Scripts/Site.js, you can pass an optional page title -->
+
+        <div id="divNavigation"></div>
+
+        <div class="container body-content">
+            <!-- your content goes here -->
+
+            <h2>About</h2>
+            <h3>Your application description page.</h3>
+            <p>Use this area to provide additional information.</p>
+
+        </div> <!-- end of container body-content -->   
+
+        <!-- 2021-02-23, DMW, include the hidden attribute in the divStatus class to make it disappear -->
+        <div class="container" name="divStatus">
+            <p style="text-align: center;">
+                <b>Network Status:</b> <span id="spanNetworkStatus"></span>
+                <b>Display Height:</b> <span id="spanDisplayHeight"></span>
+                <b>Width:</b> <span id="spanDisplayWidth"></span>
+            </p>
+        </div>
+
+        <div id="divFooter"></div>
+
+        <script>
+            // get network status
+            if (navigator.onLine)
+                spanNetworkStatus.innerHTML = "<span class='badge rounded-pill bg-success'>Online</span>";
+            else
+                spanNetworkStatus.innerHTML = "<span class='badge rounded-pill bg-secondary'>Offline</span>";
+
+            spanDisplayHeight.innerHTML = window.innerHeight + "px";
+            spanDisplayWidth.innerHTML = window.innerWidth + "px";
+        </script>
+
+    </body>
+
+</html>

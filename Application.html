@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!--
+
+     Author:    Deanna M. Wilborne
+    Created:    2021-02-13
+    Purpose:    Provide the first page of an Application
+    History:
+                2023-10-13, DMW, updated to use Bootstrap v5.3.2
+                    * added LICENSE.txt file
+                2023-10-13, DMW
+                    NOTES: the modenizr-2.8.3.js file is not current; recommend downloading a new custom
+                        modenizr from https://modernizr.com/download?setclasses; install modenizr in the
+                        Scripts folder and update the script tag below to point to the new file;
+                        IMPORTANT: the head of Application.html, About.html, Contact.html, and template.html
+                        will all need to be updated to point to the new file;
+
+                        Scripts/WebForms may be out of date;
+
+                2021-03-19, DMW, updated to use Bootstrap v5 beta 2
+                2021-02-23, DMW, corrected hidden attribute on appPage2 and appPage3
+                2021-02-16, DMW, made modifications for multiple-page, single HTML file, application
+                2021-02-15, DMW, added custom Application.js and appropriate onload attribute call.  Changed manifest file name to application.json
+                    because something caused the file to be unreadable on the hosting server.
+                    removed unused scripts from comments, below.
+                2021-02-13, DMW, created.
+
+                CC-BY-SA-NV 4.0 license 2021, Deanna M. Wilborne, all rights reserved.
+                https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title id="appTitle"></title> <!-- set this in your body onload() method call -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="Content/Site.css" rel="stylesheet" />
+        <script src="Scripts/jquery-3.7.1.min.js"></script>
+        <script src="Scripts/WebForms/WebForms.js"></script>
+        <script src="Scripts/WebForms/WebUIValidation.js"></script>
+        <script src="Scripts/WebForms/MenuStandards.js"></script>
+        <script src="Scripts/WebForms/GridView.js"></script>
+        <script src="Scripts/WebForms/DetailsView.js"></script>
+        <script src="Scripts/WebForms/TreeView.js"></script>
+        <script src="Scripts/WebForms/WebParts.js"></script>
+        <script src="Scripts/WebForms/Focus.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/modernizr-2.8.3.js"></script>
+        <script src="Scripts/Site-Navigation.js"></script>
+        <script src="Scripts/Site.js"></script>
+        <link rel="manifest" href="application.json" />
+        <script src="check_sw.js"></script>
+
+        <!-- icons needed for Apple iOS PWA(s) -->
+        <link rel="apple-touch-icon" href="app_icon_120x120.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="app_icon_152x152.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="app_icon_167x167.png" />
+        <link rel="apple=touch-icon" sizes="180x180" href="app_icon_180x180.png" />
+        
+    </head>
+
+    <body onload="onload(''); appOnload();"> <!-- onload is defined in Scripts/Site.js, you can pass an optional page title -->
+
+        <div id="divNavigation"></div>
+
+        <!-- all of your application's pages go inside this container -->
+        <div class="container body-content">
+
+            <!-- your page 1 content goes in the container appPage1 -->
+            <div class="container" id="appPage1">
+            </div>
+
+            <!-- your page 2 content goes in the container appPage2 -->
+            <div class="container" id="appPage2" hidden>
+            </div>
+
+            <!-- your page 3 content goes in the container appPage3 -->
+            <div class="container" id="appPage3" hidden>
+            </div>
+
+            <!--
+                You can add as many pages as you need for your application.
+                Make sure you give each page a valid appPage# id, and update the array VALID_PAGES
+                of Scripts/Application.js to have all valid page numbers within it.
+            -->
+
+        </div> <!-- end of container body-content -->   
+
+        <div id="divFooter"></div>
+
+        <!-- put all of your after content scripts here -->
+
+        <script src="Scripts/Application.js"></script>
+
+    </body>
+
+</html>

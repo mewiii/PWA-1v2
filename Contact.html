@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+
+     Author:    Deanna M. Wilborne
+    Created:    2021-02-13
+    Purpose:    Provide Application Contact Information
+    History:
+                2021-03-19, DMW, updated to use Bootstrap v5 beta 2
+
+                CC-BY-SA-NV 4.0 license 2021, Deanna M. Wilborne, all rights reserved.
+                https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title id="appTitle"></title> <!-- set this in your body onload() method call -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--
+        <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="Content/Site.css" rel="stylesheet" />
+
+        <!-- <script src="Scripts/jquery-3.4.1.intellisense.js"></script> --> <!-- 2021-02-13, DMW, used by editors, not needed for the application -->
+        <script src="Scripts/jquery-3.7.1.min.js"></script> <!-- 2023-10-13, DMW, updated to use jQuery v3.7.1 -->
+        <!-- <script src="Scripts/jquery-3.5.1.min.js"></script> -->
+        <!-- <script src="Scripts/jquery-3.4.1.min.js"></script> -->
+        <!-- <script src="Scripts/jquery-3.4.1.slim.min.js"></script> -->
+        <script src="Scripts/WebForms/WebForms.js"></script>
+        <script src="Scripts/WebForms/WebUIValidation.js"></script>
+        <script src="Scripts/WebForms/MenuStandards.js"></script>
+        <script src="Scripts/WebForms/GridView.js"></script>
+        <script src="Scripts/WebForms/DetailsView.js"></script>
+        <!-- <script src="Scripts/WebForms/SmartNav.js"></script> --> <!-- 2021-02-13, DMW, has an error at line 259 for non IE browsers, don't seem to need it-->
+        <script src="Scripts/WebForms/TreeView.js"></script>
+        <script src="Scripts/WebForms/WebParts.js"></script>
+        <script src="Scripts/WebForms/Focus.js"></script>
+        <!--
+        <script src="Scripts/bootstrap.min.js"></script>
+        -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/modernizr-2.8.3.js"></script>
+        <script src="Scripts/Site-Navigation.js"></script>
+        <script src="Scripts/Site.js"></script>
+
+    </head>
+
+    <body onload="onload('Contact');"> <!-- onload is defined in Scripts/Site.js, you can pass an optional page title -->
+
+        <div id="divNavigation"></div>
+
+        <div class="container body-content">
+            <!-- your content goes here -->
+
+            <h2>Contact</h2>
+            <h3>Your contact page.</h3>
+            <address>
+                PO BOX 0<br />
+                Anywhere, VA 00000-0000<br />
+                <abbr title="Phone">P:</abbr>
+                555-555-5555
+            </address>
+        
+            <address>
+                <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+                <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+            </address>
+        
+        </div> <!-- end of container body-content -->   
+
+        <div id="divFooter"></div>
+
+    </body>
+
+</html>
